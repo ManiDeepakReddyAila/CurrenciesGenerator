@@ -1,58 +1,59 @@
+# CurrenciesGenerator
 
-# Welcome to your CDK Python project!
+CurrenciesGenerator is a powerful tool designed to automate the fetching, processing, and management of currency data. The project leverages APIs to provide real-time currency exchange rates and offers a flexible setup for integrating with various financial applications.
 
-This is a blank project for CDK development with Python.
+## Tools and Technologies Used
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS%20CDK-orange?logo=amazon&logoColor=white)
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+## Table of Contents
 
-To manually create a virtualenv on MacOS and Linux:
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
 
-```
-$ python3 -m venv .venv
-```
+## Features
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+- **Real-Time Data:** Fetches live currency exchange rates using external APIs.
+- **Customizable:** Supports multiple base currencies and target symbols to tailor data to your needs.
+- **Easy Integration:** Easily integrates with other financial tools and applications.
+- **Data Storage:** Configurable options to store data in various formats, such as CSV or databases.
+- **Error Handling:** Robust error handling for API calls and data processing.
 
-```
-$ source .venv/bin/activate
-```
+## Installation
 
-If you are a Windows platform, you would activate the virtualenv like this:
+Follow the steps below to set up the project on your local machine.
 
-```
-% .venv\Scripts\activate.bat
-```
+1. **Clone the repository:**
 
-Once the virtualenv is activated, you can install the required dependencies.
+   ```bash
+   git clone https://github.com/PranithaPoosa/CurrenciesGenerator.git
+   cd CurrenciesGenerator/cdk
+2. **Set up the virtual environment:**
+   python3 -m venv .venv
+   source .venv/bin/activate
+3. **Install required dependencies:**
+   pip install -r requirements.txt
 
-```
-$ pip install -r requirements.txt
-```
+## Usage
+Once the project is set up, you can start generating currency data using the instructions below:
 
-At this point you can now synthesize the CloudFormation template for this code.
+1. Running the Application:
 
-```
-$ cdk synth
-```
+   Run the main script to fetch and process currency data:
+   ```bash
+   python currencies_generator.py
+2. Viewing results:
+   The processed currency data will be saved in the output S3 bucket.
 
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
+## Project Structure
+Here's an overview of the project structure:
+```bash
+CurrenciesGenerator/
+├── cdk/                  # Configuration and deployment scripts
+├── currencies_generator.py # Main script
+├── requirements.txt      # Python dependencies
+└── README.md             # Project documentation
 
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
